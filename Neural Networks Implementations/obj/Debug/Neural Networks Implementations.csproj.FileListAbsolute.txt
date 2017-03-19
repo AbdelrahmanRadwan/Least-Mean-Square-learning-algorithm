@@ -1,0 +1,10 @@
+C:\Users\Abdelrahman\Desktop\Neural Networks Implementations\Neural Networks Implementations\bin\Debug\Neural Networks Implementations.exe.config
+C:\Users\Abdelrahman\Downloads\Materials\NEW\Neural Networks\Neural Networks Implementations\Neural Networks Implementations\bin\Debug\Neural Networks Implementations.exe.config
+C:\Users\Abdelrahman\Downloads\Materials\NEW\Neural Networks\Neural Networks Implementations\Neural Networks Implementations\bin\Debug\Neural Networks Implementations.exe
+C:\Users\Abdelrahman\Downloads\Materials\NEW\Neural Networks\Neural Networks Implementations\Neural Networks Implementations\bin\Debug\Neural Networks Implementations.pdb
+C:\Users\Abdelrahman\Downloads\Materials\NEW\Neural Networks\Neural Networks Implementations\Neural Networks Implementations\obj\Debug\Neural Networks Implementations.csprojResolveAssemblyReference.cache
+C:\Users\Abdelrahman\Downloads\Materials\NEW\Neural Networks\Neural Networks Implementations\Neural Networks Implementations\obj\Debug\Neural_Networks_Implementations.Form1.resources
+C:\Users\Abdelrahman\Downloads\Materials\NEW\Neural Networks\Neural Networks Implementations\Neural Networks Implementations\obj\Debug\Neural_Networks_Implementations.Properties.Resources.resources
+C:\Users\Abdelrahman\Downloads\Materials\NEW\Neural Networks\Neural Networks Implementations\Neural Networks Implementations\obj\Debug\Neural Networks Implementations.csproj.GenerateResource.Cache
+C:\Users\Abdelrahman\Downloads\Materials\NEW\Neural Networks\Neural Networks Implementations\Neural Networks Implementations\obj\Debug\Neural Networks Implementations.exe
+C:\Users\Abdelrahman\Downloads\Materials\NEW\Neural Networks\Neural Networks Implementations\Neural Networks Implementations\obj\Debug\Neural Networks Implementations.pdb
