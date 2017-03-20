@@ -8,3 +8,6 @@ C:\Users\Abdelrahman\Downloads\Materials\NEW\Neural Networks\Neural Networks Imp
 C:\Users\Abdelrahman\Downloads\Materials\NEW\Neural Networks\Neural Networks Implementations\Neural Networks Implementations\obj\Debug\Neural Networks Implementations.csproj.GenerateResource.Cache
 C:\Users\Abdelrahman\Downloads\Materials\NEW\Neural Networks\Neural Networks Implementations\Neural Networks Implementations\obj\Debug\Neural Networks Implementations.exe
 C:\Users\Abdelrahman\Downloads\Materials\NEW\Neural Networks\Neural Networks Implementations\Neural Networks Implementations\obj\Debug\Neural Networks Implementations.pdb
+E:\Study & Learn\Materials\NEW\Neural Networks\Neural Networks Implementations\Neural Networks Implementations\bin\Debug\Neural Networks Implementations.exe.config
+E:\Study & Learn\Materials\NEW\Neural Networks\Neural Networks Implementations\Neural Networks Implementations\obj\Debug\Neural Networks Implementations.exe
+E:\Study & Learn\Materials\NEW\Neural Networks\Neural Networks Implementations\Neural Networks Implementations\obj\Debug\Neural Networks Implementations.pdb

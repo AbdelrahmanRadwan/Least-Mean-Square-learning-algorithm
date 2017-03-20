@@ -160,10 +160,10 @@ namespace Neural_Networks_Implementations
                         Weights[2] = Weights[2] + (eta * error[j] * TheMainForm.Data.TrainingData[Class1, j, Feature2]);
 
                     }
-                    if(Equality())
+                    /*if(Equality())
                     {
                         break;
-                    }
+                    }*/
                     
                 }
 
