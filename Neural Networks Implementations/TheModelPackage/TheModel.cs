@@ -16,8 +16,9 @@ namespace Neural_Networks_Implementations
         public int Class1, Class2; //zero based
         public int Feature1, Feature2; // zero based;
         double eta;
+        double mse_thres;
         double v; // Linear Combiner
-        int y; // the response
+        double y; // the response
         double MinFeature1, MinFeature2, MaxFeature1, MaxFeature2;
         double[] error; //vector 1 X number of training
         public double[] Weights; // vector of  ( number of inputs +1 ) x 1
@@ -32,6 +33,7 @@ namespace Neural_Networks_Implementations
             this.num_training = TheMainForm.Data.NumberOfTrainingInstances * this.num_input;
             this.bias = TheMainForm.bias;
             this.eta = TheMainForm.eta;
+            this.mse_thres = TheMainForm.mse_thres;
             this.Class1 = TheMainForm.class1;
             this.Class2 = TheMainForm.class2;
             this.Feature1 = TheMainForm.FeatureOnX;
@@ -94,7 +96,7 @@ namespace Neural_Networks_Implementations
             for (int i = 0; i < num_training; i++)
                 result = result + error[i] * error[i];
 
-            return result / num_training;
+            return 0.5 * result / num_training;
         }
 
         bool Equality()
@@ -119,8 +121,8 @@ namespace Neural_Networks_Implementations
 
                         v = Weights[0]*bias + TheMainForm.Data.TrainingData[Class1, j, Feature1] * Weights[1] +
                             TheMainForm.Data.TrainingData[Class1, j, Feature2] * Weights[2];
-                        y = SignumActivationFunction(v);
-                        error[j] = 1 - y;
+                        y = v;//  Linear activation function 
+                        error[j] = 1 - y; //1 is the first class
 
                         Weights[0] = (Weights[0] + (eta * error[j] * 1)) * bias;
                         Weights[1] = Weights[1] + (eta * error[j] * TheMainForm.Data.TrainingData[Class1, j, Feature1]);
@@ -129,8 +131,8 @@ namespace Neural_Networks_Implementations
 
                         v = Weights[0]*bias + TheMainForm.Data.TrainingData[Class2, j, Feature1] * Weights[1] +
                             TheMainForm.Data.TrainingData[Class2, j, Feature2] * Weights[2];
-                        y = SignumActivationFunction(v);
-                        error[j] = -1 - y;
+                        y = v;//  Linear activation function 
+                        error[j] = -1 - y; // 2 is the first class
 
                         Weights[0] = (Weights[0] + (eta * error[j] * 1)) * bias;
                         Weights[1] = Weights[1] + (eta * error[j] * TheMainForm.Data.TrainingData[Class2, j, Feature1]);
@@ -142,8 +144,8 @@ namespace Neural_Networks_Implementations
 
                         v = Weights[0]*bias + TheMainForm.Data.TrainingData[Class2, j, Feature1] * Weights[1] +
                             TheMainForm.Data.TrainingData[Class2, j, Feature2] * Weights[2];
-                        y = SignumActivationFunction(v);
-                        error[j] = -1 - y;
+                        y = v;//  Linear activation function 
+                        error[j] = 1 - y; // 1 is the first class
 
                         Weights[0] = (Weights[0] + (eta * error[j] * 1)) * bias;
                         Weights[1] = Weights[1] + (eta * error[j] * TheMainForm.Data.TrainingData[Class2, j, Feature1]);
@@ -152,8 +154,8 @@ namespace Neural_Networks_Implementations
 
                         v = Weights[0]*bias + TheMainForm.Data.TrainingData[Class1, j, Feature1] * Weights[1] +
                                 TheMainForm.Data.TrainingData[Class1, j, Feature2] * Weights[2];
-                        y = SignumActivationFunction(v);
-                        error[j] = 1 - y;
+                        y = v;//  Linear activation function 
+                        error[j] = -1 - y; // 2 is the second class
 
                         Weights[0] = (Weights[0] + (eta * error[j] * 1)) * bias;
                         Weights[1] = Weights[1] + (eta * error[j] * TheMainForm.Data.TrainingData[Class1, j, Feature1]);
@@ -166,35 +168,9 @@ namespace Neural_Networks_Implementations
                     }*/
                     
                 }
-
-                /*
-                for (int j = 0; j < TheMainForm.Data.NumberOfTrainingInstances; j++)
-                {
-                    v = Weights[0] + TheMainForm.Data.TrainingData[Class1, j, Feature1] * Weights[1] +
-                        TheMainForm.Data.TrainingData[Class1, j, Feature2] * Weights[2];
-                    y = SignumActivationFunction(v);
-                    error[j] = 1 - y;
-
-                    Weights[0] = (Weights[0] + (eta * error[j] * 1)) * bias;
-                    Weights[1] = Weights[1] + (eta * error[j] * TheMainForm.Data.TrainingData[Class1, j, Feature1]);
-                    Weights[2] = Weights[2] + (eta * error[j] * TheMainForm.Data.TrainingData[Class1, j, Feature2]);
-                }
-
-                // class 2 process
-                for (int j = 0; j < TheMainForm.Data.NumberOfTrainingInstances; j++)
-                {
-                    v = Weights[0] + TheMainForm.Data.TrainingData[Class2, j, Feature1] * Weights[1] +
-                        TheMainForm.Data.TrainingData[Class2, j, Feature2] * Weights[2];
-                    y = SignumActivationFunction(v);
-                    error[j] = 2 - y;
-
-                    Weights[0] = (Weights[0] + (eta * error[j] * 1))*bias;
-                    Weights[1] = Weights[1] + (eta * error[j] * TheMainForm.Data.TrainingData[Class2, j, Feature1]);
-                    Weights[2] = Weights[2] + (eta * error[j] * TheMainForm.Data.TrainingData[Class2, j, Feature2]);
-                }
-                */
-                //update the mean squared error
                 MeanSquareError[i] = CalculateMeanSquareError();
+                 if (MeanSquareError[i] < mse_thres)
+                     break;
             }
 
         }

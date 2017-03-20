@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Neural_Networks_Implementations
+namespace Neural_Networks_Implementations   
 {
     public partial class Form1 : Form
     {
@@ -19,9 +19,11 @@ namespace Neural_Networks_Implementations
         public int FeatureOnY;
         public int bias ;
         public double eta;
+        public double mse_thres;
         public int epochs;
         public int class1;
         public int class2;
+        public Point point1, point2;
         public Form1()
         {
             InitializeComponent();
@@ -76,6 +78,7 @@ namespace Neural_Networks_Implementations
         private void Train(object sender, EventArgs e)
         {
             int.TryParse(textBox2.Text, out epochs);
+            double.TryParse(textBox3.Text, out mse_thres);
             double.TryParse(textBox1.Text, out eta);
             class1 = comboBox3.Text[0] - '0' - 1;
             class2 = comboBox4.Text[0] - '0' - 1;
@@ -92,7 +95,16 @@ namespace Neural_Networks_Implementations
         {
             MessageBox.Show("Start testing the model");
             ModelTester = new TheTester(this);
+
         }
 
+    }
+    public class Point
+    {
+        public double X, Y;
+        public Point()
+        {
+            this.X = this.Y = 0;
+        }
     }
 }
